@@ -20,6 +20,8 @@ const messages = [
   "This heart learned your name"
 ];
 
+const fullName = "Reneilwe (wewe) Anny Mothibi";
+
 function getDayIndex(total: number) {
   const now = new Date();
   const start = Date.UTC(now.getUTCFullYear(), 0, 1);
@@ -131,7 +133,7 @@ export default function ParticleHeart() {
 
         ctx.beginPath();
         ctx.arc(p.x, p.y, Math.max(1.2, canvas.width * 0.0012), 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255, 30, 60, ${p.alpha})`;
+        ctx.fillStyle = `rgba(255, 30, 60, ${p.alpha})`; // RED heart
         ctx.fill();
       });
 
@@ -155,6 +157,7 @@ export default function ParticleHeart() {
       <div style={messageStyle}>
         <h1>{messages[dayIndex]}</h1>
         <p>And made a heart out of it ❤️</p>
+        <p style={{ fontSize: "1rem", opacity: 0.8 }}>{fullName}</p>
       </div>
     </>
   );
